@@ -1,0 +1,199 @@
+===========================================================================================
+
+########### mysql 5.6 
+
+create database magento212;
+grant all privileges on magento212.*to magento212@localhost;
+use mysql;
+update user set password=password('magento212') where user=('magento212');
+flush privileges;
+use magento212;
+
+
+===========================================================================================
+
+############ mysql 5.7 and MariaDB 10.5
+
+create database v_20;
+
+
+GRANT ALL ON v_20.* TO voylite_live@localhost IDENTIFIED BY '1688*RoLon';
+
+
+=========================================================================================
+     
+############ mysql 8.0
+	
+### CREATE magento240
+mysql> CREATE DATABASE magento243;
+ 
+### CREATE USER ACCOUNT
+mysql> CREATE USER 'magento243'@'localhost' IDENTIFIED BY 'Project@2021**';
+ 
+### GRANT PERMISSIONS ON DATABASE
+mysql> GRANT ALL ON magento243.* TO 'magento243'@'localhost';
+ 
+###  RELOAD PRIVILEGES
+mysql> FLUSH PRIVILEGES;
+
+### TO CHANGE ROOT PASSWORD
+ALTER USER 'root'@'localhost' IDENTIFIED  BY 'pass123';
+
+https://stackoverflow.com/questions/43094726/your-password-does-not-satisfy-the-current-policy-requirements
+
+==============================================
+        Installation on Magento
+php bin/magento setup:install --base-url=http://192.168.0.205/magento/vikas/mage2-vikas241/ --backend-frontname=backend --db-host=localhost --db-name=mage2_vikash241 --db-user=mage2vikash241 --db-password=sysne@2021 --admin-firstname=Magento --admin-lastname=User --admin-email=developer@oscprofessionals.in --admin-user=developer --admin-password=developer456 --language=en_US --currency=USD --timezone=America/Chicago
+
+
+=====================================
+
+chmod -R 777 var/ pub/ generated/
+php bin/magento index:reset
+php bin/magento index:reindex
+
+chmod -R 777 var/ pub/static/ 
+php bin/magento s:up 
+php bin/magento s:d:c
+php bin/magento s:s:d -f
+php bin/magento c:c
+php bin/magento c:f
+chmod -R 777 var/ pub/static generated/
+
+
+=====================================
+sudo php bin/magento index:reset
+php -d memory_limit=1024M bin/magento index:reindex
+ chmod -R 777 var/ pub/ generated/
+sudo php -d memory_limit=2G bin/magento s:up
+sudo php -d memory_limit=1024M bin/magento s:d:c
+sudo php -d memory_limit=1024M bin/magento s:s:d en_GB en_US-f 
+sudo chmod -R 777 var/ pub/ generated/
+sudo php -d memory_limit=1024M bin/magento c:c
+sudo php -d memory_limit=1024M bin/magento c:f
+sudo chmod -R 777 var/ pub/ generated/
+
+==============================================
+
+php n98-magerun2-latest.phar db:dump --compression="gzip" --strip=" @log @customers @sales @stripped"
+n98-magerun2-latest.phar
+
+//stream_wrapper_unregister('phar');
+app/boostrap.php
+php bin/magento setup:upgrade && php bin/magento setup:di:compile && php bin/magento setup:static-content:deploy -f && php bin/magento cache:flush 
+=======================================================
+ Installation of mailchimp module in M2
+steps=>
+ composer require ebizmarts/mailchimp-lib
+ composer require mailchimp/mc-magento2
+ grunt refresh
+ grunt less
+php -d memory_limit=2G bin/magento index:reindex
+php -d memory_limit=2G bin/magento setup:upgrade
+php -d memory_limit=2G bin/magento setup:di:compile
+php -d memory_limit=2G bin/magento setup:static-content:deploy -f
+php -d memory_limit=2G bin/magento cache:clean 
+php -d memory_limit=2G bin/magento cache:flush
+chmod -R 777 var/ pub/ generated/
+
+
+========================================================
+ *Create New user*
+php bin/magento admin:user:create --admin-user="demoadmin" --admin-password="demoadmin456" --admin-email="ankitna@oscprofessionals.in" --admin-firstname="ankit" --admin-lastname="ninave"
+ demoadmin // Password: demoadmin1234
+========================================================
+grunt install on centos
+yum install -y gcc-c++ make
+curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
+yum -y install nodejs
+npm install -g grunt-cli
+mv package.json.sample package.json
+mv Gruntfile.js.sample Gruntfile.js
+npm install
+npm update
+
+========================================================
+#mysql db backup
+
+mysqldump --single-transaction --quick -udrvienblog drvienblog -psys56blog2 | gzip -9 > dbsblog2.sql.gz
+
+define('DB_NAME', 'techsilvercouk');
+
+/** MySQL database username */
+define('DB_USER', 'techsilvercouk');
+
+/** MySQL database password */
+define( 'DB_PASSWORD', 'BHNzNPCTyeaQ0Oh' );
+
+
+#mysql db backup exclude table
+
+mysqldump --single-transaction --quick -uDBNAME -p --ignore-table=DBNAME.TABLE_EXCLUDE DBNAME | gzip -9 > DBNAME.sql.gz
+magen2_testmagencom234
+==========================================================
+#mysql db backup for single table
+mysqldump -u <db_username> -h <db_host> -p db_name table_name > table_name.sql
+
+mysqldump --single-transaction --quick -uab967cfc_west ab967cfc_west core_config_data -pEldestFeversEbonyBailed | gzip -9 > westleake19111911.sql.gz
+dbname' => 'toprc_magento_dev',
+username' => 'toprc_dev',
+password' => 'hn~PxDKsnDgtsw+S',
+
+
+mysqldump --single-transaction --quick -udbs_prepode dbs_prepode make_model_year_search_log -pprepode@2018 | gzip -9 > dbbackupformmy0209.sql.gz
+==========================================================
+db backup for all databases
+mysqldump -u root -p --all-databases > all_databases.sql
+mysqldump -u root --all-databases | gzip -9 > alldatabasesofosc0202.sql.gz
+==========================================================
+
+DB backup cron setting in server
+vim /root/bin/db
+mysqldump --single-transaction --quick -utdxrdtvvbt tdxrdtvvbt -pgMJ5Ued5gf | gzip -9 > indus1612.sql.gz
+
+mysql db backup
+
+mysqldump --single-transaction --quick  -udrvienblog drvienblog2 -p | gzip -9 > drvienblog21406.sql.gz
+'host' => 'localhost',
+                'dbname' => 'tdxrdtvvbt',
+                'username' => 'tdxrdtvvbt',
+                'password' => 'gMJ5Ued5gf',
+
+============================================================================================================
+select * FROM core_config_data WHERE path LIKE '%base%';
+select * FROM core_config_data WHERE path LIKE '%merge%';
+select * FROM core_config_data WHERE path value LIKE '%@%';
+UPDATE core_config_data SET value = REPLACE (value,'https://m2uatest.efuma.com/','https://osc.efuma.com/');
+UPDATE core_config_data SET value = '0' WHERE path LIKE 'dev/css/merge_css_files';
+UPDATE core_config_data SET value = REPLACE (value,'@trutex.com','@Dev-trutex-Dev.com');
+UPDATE core_config_data SET value = REPLACE (value,'@apiconnector.com','@Dev-apiconnector-Dev.com');
+UPDATE core_config_data SET value = REPLACE (value,'INDEX,FOLLOW','NOINDEX,NOFOLLOW');
+============================================================================================================
+UPDATE `core_config_data` SET `value` = NULL WHERE `core_config_data`.`path` = 'web/unsecure/base_static_url';
+UPDATE `core_config_data` SET `value` = NULL WHERE `core_config_data`.`path` = 'web/secure/base_static_url';
+UPDATE `core_config_data` SET `value` = NULL WHERE `core_config_data`.`path` = 'web/unsecure/base_media_url';
+UPDATE `core_config_data` SET `value` = NULL WHERE `core_config_data`.`path` = 'web/secure/base_media_url';
+============================================================================================================
+UPDATE core_config_data SET value = REPLACE (value,'https://www.betachek.com/','http://betachek.wwwnl1-ls7.a2hosted.com/') WHERE config_id = 2;
+php bin/magento config:set dev/static/sign 0
+
+
+============================================================================================================
+*IF WE WANT TO SEE ALL TABLES STARTING WITH NAME 'X'*
+show tables LIKE "sales%";
+
+*IF WE DON'T WANT TO SEE ALL TABLES OTHER THAN STARTING WITH NAME 'X'*
+show tables WHERE `Tables_in_magento232ee_quote` NOT LIKE "quote%";
+============================================================================================================
+
+#!/bin/sh
+DateTimeStamp=$(date '+%d_%m_%y')
+mkdir /mnt/203-backup/dbbackup/${DateTimeStamp}
+cd /mnt/203-backup/dbbackup/${DateTimeStamp}
+
+sed 's/\sDEFINER=`[^`]*`@`[^`]*`//g' -i braganlive2405.sql
+
+<FilesMatch \.php>
+    # Apache 2.4.10+ can proxy to unix socket
+   SetHandler "proxy:unix:/var/run/php/php7.4-fpm.sock|fcgi://localhost/"
+</FilesMatch>
